@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:get/get.dart';
+
 List<ProductModel> productModelFromJson(String str) => List<ProductModel>.from(
     json.decode(str).map((x) => ProductModel.fromJson(x)));
 
@@ -48,6 +50,7 @@ class ProductModel {
         "image": image,
         "rating": rating.toJson(),
       };
+  final isFavorite = false.obs;
 }
 
 enum Category { MEN_S_CLOTHING, JEWELERY, ELECTRONICS, WOMEN_S_CLOTHING }

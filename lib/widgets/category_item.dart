@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({Key? key}) : super(key: key);
+  final String catName;
+  const CategoryItem({Key? key, required this.catName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CategoryItem extends StatelessWidget {
         padding: EdgeInsets.all(5),
         child: FittedBox(
             child: Text(
-              "men's clothing",
+              "$catName",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 12),
             )),
@@ -25,7 +26,7 @@ class CategoryItem extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           border: Border.all(
-              color: Colors.deepOrange.withOpacity(0.7), width: 1),
+              color: Colors.purple.withOpacity(0.7), width: 1),
           borderRadius: BorderRadius.circular(60)),
     );
   }

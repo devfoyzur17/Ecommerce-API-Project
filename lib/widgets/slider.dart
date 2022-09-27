@@ -25,21 +25,21 @@ class AppSlider extends StatelessWidget {
             isLoop: true,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
                   'assets/images/baner1.jpg',
                   fit: BoxFit.fill,
                 ),
               ),
               ClipRRect(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
                   'assets/images/baner3.jpg',
                   fit: BoxFit.fill,
                 ),
               ),
               ClipRRect(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
                   'assets/images/baner4.jpg',
                   fit: BoxFit.fill,
@@ -49,7 +49,7 @@ class AppSlider extends StatelessWidget {
           
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20)
+          borderRadius: BorderRadius.circular(15)
         ),
         
     );
