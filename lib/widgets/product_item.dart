@@ -1,4 +1,5 @@
 import 'package:ecommerce_api_project/controllers/cert_controller.dart';
+import 'package:ecommerce_api_project/controllers/product_controller.dart';
 import 'package:ecommerce_api_project/models/product_model.dart';
 import 'package:ecommerce_api_project/routes/routes.dart';
 import 'package:flutter/material.dart';

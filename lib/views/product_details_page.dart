@@ -1,4 +1,7 @@
+import 'package:ecommerce_api_project/controllers/product_controller.dart';
 import 'package:ecommerce_api_project/models/product_model.dart';
+import 'package:ecommerce_api_project/routes/routes.dart';
+import 'package:ecommerce_api_project/widgets/show_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -7,6 +10,7 @@ class ProductDetailsPage extends StatelessWidget {
   ProductDetailsPage({Key? key}) : super(key: key);
 
   final ProductModel product = Get.arguments;
+  final productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +113,29 @@ class ProductDetailsPage extends StatelessWidget {
                       ]),
                 ),
               ),
+              SizedBox(
+                height: 15,
+              ),
+              Center(
+                child: Obx(
+                  () => productController.isDelLoading.value
+                      ? ShowLoading()
+                      : OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                              primary: Colors.purple,
+                              side: BorderSide(color: Colors.purple),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          onPressed: () async {
+                            await productController
+                                .deleteProduct(product.id)
+                                .then((value) => productController
+                                    .removeFromTheList(product))
+                                .then((value) => Navigator.pop(context));
+                          },
+                          child: Text("Delete this product")),
+                ),
+              )
             ],
           ),
         ));

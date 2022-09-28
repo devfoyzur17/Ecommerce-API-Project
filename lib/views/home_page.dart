@@ -58,7 +58,8 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(right: 10),
             child: InkWell(
               onTap: () {
-                Get.toNamed(Routes.cartPage, arguments:  cartController.cartProductList);
+                Get.toNamed(Routes.cartPage,
+                    arguments: cartController.cartProductList);
               },
               child: Stack(
                 clipBehavior: Clip.none,
@@ -77,7 +78,9 @@ class _HomePageState extends State<HomePage> {
                         height: 16,
                         decoration: BoxDecoration(
                             color: Colors.red, shape: BoxShape.circle),
-                        child: FittedBox(child: Obx(()=> Text("${cartController.getCount()}")))),
+                        child: FittedBox(
+                            child: Obx(
+                                () => Text("${cartController.getCount()}")))),
                   )
                 ],
               ),
@@ -170,8 +173,8 @@ class _HomePageState extends State<HomePage> {
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               childAspectRatio: 2 / 3,
                               crossAxisCount: 2,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 20),
+                              crossAxisSpacing: 15,
+                              mainAxisSpacing: 15),
                       itemCount: productController.allProductList.length,
                       itemBuilder: (context, index) {
                         final product = productController.allProductList[index];
